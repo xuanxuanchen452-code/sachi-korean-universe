@@ -1,0 +1,33 @@
+:root{--ink:#6a4c59;--lav:#ffe8ef;--pink:#f7bbce;--cream:#fffaf7;--line:#e9bfca}
+body{background:radial-gradient(circle at 10% 8%,#fff3fa 0 16%,transparent 35%),linear-gradient(155deg,#ffe5ec,#fff7ed 45%,#ffe8f0);color:#66515b}
+main{max-width:750px;padding-bottom:90px}
+header{padding:20px 4px 8px}header small{color:#ba7c92}header h1{font-size:25px;letter-spacing:.03em}
+.box{background:rgba(255,252,249,.96);border:2px solid #d9a5b6;box-shadow:4px 5px 0 #f2cbd5;border-radius:22px;padding:19px;margin:16px 0}
+.hero{background:linear-gradient(120deg,#ffe5ee,#fff5eb);border-color:#dca7b8}
+.hero .mascot{mix-blend-mode:normal;object-fit:contain;background:#fff9f6}
+button{border-color:#b97f94;color:#684957;border-radius:13px;box-shadow:2px 3px 0 #eac3d0;background:#fffaf7;transition:background .15s,transform .15s}
+button.primary{background:#ffd1df}button.active,.tabs button.active{background:#f7b5cb}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9a6c8e;outline-offset:2px}
+.tabs{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.tabs button{padding:10px 1px;font-size:12px;white-space:nowrap}
+.stat,.review-stats>div{border:1px dashed #e4b7c6;background:#fff7fa;border-radius:15px}
+.flash{background:linear-gradient(155deg,#fff6f9,#ffedf3);border-color:#d9a9bc;box-shadow:inset 0 0 0 4px #fffafa}
+.progress{border-color:#d6a6b8}.progress span{background:#ee9fba}
+.pill{border-color:#ddb2c0;background:#fff0f4;color:#98697c}
+.game-room{height:340px;background:repeating-linear-gradient(90deg,#ffe2ec 0 26px,#ffeaf0 26px 52px)!important;border:5px solid #a77784;box-shadow:inset 0 0 0 5px #fff4f5,0 5px 0 #eecbd2;border-radius:10px}
+.game-room .wall{inset:0 0 31%;border-bottom:8px solid #e3acb9;background:repeating-linear-gradient(90deg,transparent 0 44px,#f6d1dd 44px 47px)}
+.game-room .floor{height:31%;border-top:6px solid #b68b7e;background:repeating-linear-gradient(0deg,transparent 0 22px,#d4a991 22px 24px),repeating-linear-gradient(90deg,#f5dfc9 0 34px,#e8c5a7 34px 37px)!important}
+.game-room .window{background:#c7e2f7;border:7px solid #fff8ed;box-shadow:4px 4px 0 #ca9aa9;border-radius:3px}
+.game-room .pet-sprite{mix-blend-mode:normal!important;opacity:1!important;filter:drop-shadow(2px 3px 0 #a98289)!important;z-index:5!important;bottom:25px;width:115px;height:115px;object-fit:contain;pointer-events:auto;cursor:pointer}
+.game-room #roomSpeech{z-index:8;max-width:195px;top:10px;left:10px;border:2px solid #d59fb3;background:#fffafd;box-shadow:3px 3px 0 #efcbd7;color:#a66a84;font-size:12px}
+.game-room #furniture{z-index:4}
+.game-room .furniture-button{touch-action:none;user-select:none;-webkit-user-select:none;border:2px solid #e3b5bf;border-radius:7px;background:#fff3edda;box-shadow:3px 3px 0 #bf9b98;filter:none;font-size:29px;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:grab}
+.game-room .furniture-button.selected{outline:3px dashed #e97b9b;background:#fff6c8}
+.game-room .furniture-button.dragging{cursor:grabbing;z-index:9!important;opacity:.88;outline:2px dashed #d781a0}
+.game-room.bathroom{background:repeating-linear-gradient(0deg,#ffe9f1 0 28px,#f6d4e0 28px 31px)!important}
+.game-room.bathroom .floor{background:repeating-linear-gradient(90deg,#fff1ec 0 33px,#efc9d2 33px 36px)!important}
+.shop{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.shop button{min-height:68px;text-align:left;background:#fff7f8}
+.review-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.review-stats>div{padding:10px 3px;text-align:center}.review-stats b{font-size:24px;display:block;color:#c47493}.review-stats small{font-size:11px}
+.review-card{min-height:185px}.review-grade{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}.review-grade button{min-height:48px}.review-grade button:disabled{opacity:.35}
+#reviewStart{margin-top:8px}
+@media(max-width:420px){main{padding:10px 11px 80px}.box{padding:13px}.tabs button{font-size:11px}.game-room{height:290px}.game-room .pet-sprite{width:90px;height:90px;bottom:26px}.game-room .furniture-button{font-size:24px;width:39px;height:39px}.review-grade button{font-size:12px;padding:9px 3px}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
