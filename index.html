@@ -32,6 +32,13 @@
 .game-room.bathroom .pet-sprite{left:45%!important;bottom:29px;width:96px;height:96px}
 .scene-bedroom-only.is-bathroom{display:none!important}
 @media(max-width:370px){.bath-tub{width:135px}.game-room.bathroom .pet-sprite{left:43%!important}}
+</style><style>
+/* 修复小屋兔喵鸭半透明问题 */
+#roomPet {
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+}
 </style></head><body><main><header><div><small class="pixel">✦ LEVEL 01 · KOREAN QUEST ✦</small><h1>Sachiの兔喵鸭<br>韩语宇宙 🐈‍⬛</h1></div><span class="pill">TOPIK I</span></header>
 <section class="box hero"><div class="pixel-frame"><img id="pet" class="mascot" src="tonyangdeok.jpg
                                                     " alt="兔喵鸭抱着紫色吉他的形象"><div class="game-banner">♪ TONYANGDEOK ♪</div></div><div style="flex:1;min-width:0"><b>안녕, Sachi! ♡</b><div id="petSpeech" class="speech" aria-live="polite">今天也一起加油！파이팅! 🎸</div><p><span class="pill" id="heroStatus">今天开始学习吧 ✨</span></p><div class="tag" id="levelLabel">LV.1 · 新手练习生</div><div class="xp-track" aria-label="升级经验进度"><div class="xp-fill" id="xpFill"></div></div><small class="tag" id="xpText">0 / 50 XP</small></div></section>
