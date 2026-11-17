@@ -102,17 +102,17 @@ document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()
  if(b.dataset.tab==='review')renderReviewStats();
 }));
 renderReviewStats();
-// Situational kaomoji, intentionally low-frequency.
-const faces={morning:['(｡•̀ᴗ-)✧ 좋은 아침!','(˶ᵔ ᵕ ᵔ˶) 早安呀 ♡'],night:['(｡-ω-)zzz 잘 자요~','(っ˘ω˘ς ) 要早点休息呀'],touch:['(˶ˆᗜˆ˵) ♡','(๑•̀ㅂ•́)و✧','(ฅ´ω`ฅ) 喵～','( ˘ ³˘)♥'],study:['٩(ˊᗜˋ*)و 잘했어!','(๑˃ᴗ˂)ﻭ 好棒！'],room:['(ﾉ´ヮ`)ﾉ*:･ﾟ✧','(｡•̀ᴗ-)✧ 今天也加油！']};
+// V8.4 room dialogue: room-specific shuffled phrases with kaomoji, no repetitive furniture/shop logic.
 let lastBubble=0;
-function bubble(kind='touch',force=false){if(!force&&Date.now()-lastBubble<8000)return;lastBubble=Date.now();
- const arr=faces[kind]||faces.touch;sayRoom(arr[Math.floor(Math.random()*arr.length)]);
+function bubble(kind='touch',force=false){
+ if(!force&&Date.now()-lastBubble<10000)return;
+ lastBubble=Date.now();sayRoomRandom();
 }
 $('roomReact').onclick=()=>bubble('touch',true);
 $('roomPet').onclick=()=>bubble('touch',true);
 const originalReact=react;
-react=function(ok){originalReact(ok);if(!$('room').classList.contains('hidden'))bubble(ok?'study':'room',true)};
-setInterval(()=>{if(!$('room').classList.contains('hidden')){const hour=new Date().getHours();bubble(hour<6||hour>=22?'night':hour<11?'morning':'room')}},45000);
+react=function(ok){originalReact(ok);if(!$('room').classList.contains('hidden'))bubble('study',true)};
+setInterval(()=>{if(!$('room').classList.contains('hidden'))bubble('room')},45000);
 // Update appearance, count, and credits without changing user-owned assets.
 const credit=document.createElement('p');credit.className='footer';credit.innerHTML='🌸 扩充词汇来源：<a href="'+source+'" target="_blank" rel="noopener">Open Yonsei Korean Vocabulary</a>（CC BY-SA 3.0）；词条级别按教材册次粗略映射，并非官方 TOPIK 等级。';
 document.querySelector('.footer')?.after(credit);
