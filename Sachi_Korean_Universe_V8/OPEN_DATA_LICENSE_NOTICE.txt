@@ -1,0 +1,5 @@
+Expanded vocabulary is loaded from Open Yonsei Korean Vocabulary (Amulopapa67).
+Source: https://github.com/Amulopapa67/open-yonsei-korean-vocabulary
+Vocabulary data license: CC BY-SA 3.0 (see source LICENSE.md).
+The website dynamically retrieves the open vocabulary data and retains attribution.
+This project is independent and not affiliated with Yonsei University.
