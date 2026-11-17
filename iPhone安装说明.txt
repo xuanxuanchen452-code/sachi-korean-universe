@@ -1,0 +1,18 @@
+Sachiの兔喵鸭韩语宇宙 V4 · iPhone Safari 安装说明
+
+一、Mac 本地预览：解压后双击 index.html。浏览器可背词，但离线缓存/主屏幕模式需要 HTTPS。
+
+二、免费上线（GitHub Pages）：
+1. 在 github.com 注册或登录账号，创建一个 Public 仓库，例如 sachi-korean。
+2. 将压缩包解压后的 index.html、tonyangdeok.jpg、icon-192.png、icon-512.png、manifest.webmanifest、sw.js 上传到仓库根目录（不要只上传 zip）。
+3. 仓库 Settings → Pages → Build and deployment → Deploy from a branch → main / (root) → Save。
+4. 等待部署完成，在 Pages 中找到公开的 HTTPS 网址。首次上线可能需要数分钟。
+5. iPhone 用 Safari 打开该网址 → 分享按钮 → 添加到主屏幕 → 添加。
+6. 首次打开需联网，成功加载后大部分静态页面可离线使用。韩语语音朗读仍取决于 iPhone 是否安装韩语声音及 Safari 支持。
+
+三、注意：
+· 这是个人非官方学习项目；词库是1～4级难度精选，不是官方完整TOPIK词库或权威逐词分级。
+· 站点数据存于当前浏览器 localStorage。Safari 和主屏幕应用可能使用不同存储空间，无法保证自动同步。请在小屋里定期导出存档，换入口时再导入。
+· 不需要提供账号密码、API密钥；GitHub Pages 免费公开托管有使用政策与限制。
+· 网站用你提供的兔喵鸭图片做个人参考展示；如果公开传播，请自行确认图片使用权限。
+· 每次更新文件后，PWA 缓存可能需要刷新或重新打开。
