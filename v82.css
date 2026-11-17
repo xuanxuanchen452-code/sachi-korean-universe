@@ -1,0 +1,39 @@
+/* V8.2 Lavender Universe — clean fixed rooms, no emoji furniture */
+:root{--ink:#605071;--lav:#eee6fa;--pink:#efd4eb;--cream:#fffdfd;--line:#d9c8eb}
+html{scroll-behavior:smooth}
+body{color:#5e526c!important;background:radial-gradient(ellipse at 14% 3%,#fff9ff 0%,transparent 36%),radial-gradient(ellipse at 85% 17%,#e8dafa 0%,transparent 38%),linear-gradient(160deg,#f3edfb 0%,#fcf9ff 48%,#f4effc 100%)!important}
+main{max-width:790px;padding:14px 18px 100px}
+header{padding:18px 6px 12px;align-items:center}
+header small{color:#8d74b4!important;font-size:11px;letter-spacing:.09em}
+header h1{color:#624b83!important;font-size:clamp(23px,4vw,29px);letter-spacing:.025em;line-height:1.36}
+.box{background:#fffdfef7!important;border:1.5px solid #d6c3e8!important;box-shadow:0 6px 0 #e7def2,0 8px 25px #6e4d8c0d!important;border-radius:22px!important;padding:20px!important;margin:18px 0!important}
+.hero{background:linear-gradient(110deg,#eee5fb,#fff8fd 75%)!important;gap:16px!important}
+.hero .mascot{mix-blend-mode:normal!important;background:#fffaff!important;border:1px solid #e3d8f0;border-radius:15px!important;object-fit:contain}
+.hero .speech{color:#735b93!important}
+button{border:1.5px solid #bba5d5!important;border-radius:13px!important;background:#fffaff!important;color:#635077!important;box-shadow:0 3px 0 #e6daf2!important;transition:background .16s,transform .16s,box-shadow .16s}
+button:hover:not(:disabled){background:#f3ebff!important}
+button:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 #e6daf2!important}
+button.primary,button.active,.tabs button.active,.scene-switch button.active{background:#ddccf7!important;color:#533f76!important;border-color:#b79bd9!important}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9d7ad4!important;outline-offset:2px}
+.tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:18px 0 22px}
+.tabs button{font-size:13px;padding:13px 4px;min-height:48px;white-space:nowrap}
+.stat,.review-stats>div{background:#faf6ff!important;border:1px solid #e2d4f0!important;border-radius:14px}
+.stat b,.review-stats b{color:#8467b2!important}
+.flash{background:linear-gradient(145deg,#fffafd,#f0eafb)!important;border:1.5px solid #cbb4e7!important;box-shadow:inset 0 0 0 4px #fff!important}
+.progress{border-color:#bda6db!important}.progress span{background:linear-gradient(90deg,#bda1eb,#9677cb)!important}
+.pill{background:#f1e9fc!important;color:#7d64a3!important;border-color:#d7c1ef!important}
+input,select{border-color:#d1bce6!important}
+.scene-switch{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.scene-switch button{min-height:52px;font-size:15px}
+/* The only room elements are background art, original transparent mascot, and speech. */
+.game-room,.game-room.bathroom{position:relative!important;box-sizing:border-box!important;width:100%!important;height:auto!important;aspect-ratio:1/1!important;max-width:620px;margin:16px auto 8px;border:4px solid #bca4dc!important;border-radius:17px!important;overflow:hidden!important;background:#eee2f9 url('room-bedroom.webp') center/100% 100% no-repeat!important;box-shadow:0 5px 0 #e9def6,0 12px 24px #7a5a9a19!important;image-rendering:auto!important}
+.game-room.bathroom{background-image:url('room-bathroom.webp')!important}
+.game-room.night:not(.bathroom){background-image:linear-gradient(#2d20581c,#2d20581c),url('room-bedroom.webp')!important}
+.game-room.bathroom.night{background-image:linear-gradient(#2d20581c,#2d20581c),url('room-bathroom.webp')!important}
+.game-room .pet-sprite,.game-room.bathroom .pet-sprite{position:absolute!important;z-index:4!important;left:50%!important;bottom:5.5%!important;top:auto!important;width:25%!important;height:auto!important;max-height:36%!important;transform:translateX(-50%)!important;object-fit:contain!important;opacity:1!important;mix-blend-mode:normal!important;filter:drop-shadow(1px 4px 2px #57446769)!important;animation:none!important;transition:none!important;pointer-events:auto!important;cursor:pointer}
+.game-room #roomSpeech{position:absolute!important;z-index:5!important;left:5%!important;top:5%!important;max-width:58%!important;background:#fffaffed!important;border:2px solid #c3addd!important;color:#71548d!important;border-radius:13px!important;box-shadow:2px 3px 0 #e3d4f4!important;font-size:12px!important;padding:8px 10px!important}
+#room .subnav{justify-content:center;gap:10px}#room .subnav button{min-height:44px}
+#room h2{color:#6b538a}
+.footer{color:#80718f}
+@media(max-width:480px){main{padding:10px 11px 88px}header h1{font-size:22px}.box{padding:14px!important;margin:14px 0!important;border-radius:17px!important}.tabs{gap:5px}.tabs button{font-size:11px;min-height:44px;padding:9px 1px}.scene-switch button{font-size:13px}.game-room,.game-room.bathroom{border-width:3px!important;border-radius:12px!important}.game-room #roomSpeech{font-size:10px!important;padding:5px 7px!important}.game-room .pet-sprite,.game-room.bathroom .pet-sprite{width:27%!important}}
+@media(prefers-reduced-motion:reduce){button{transition:none!important}}

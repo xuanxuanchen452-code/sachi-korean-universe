@@ -102,46 +102,6 @@ document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()
  if(b.dataset.tab==='review')renderReviewStats();
 }));
 renderReviewStats();
-// Dollhouse furniture collection: starter items are free; all other items are earned with study coins.
-const extras=[
- ['sofa','草莓奶油沙发','🛋️',20,63,62],['rug','樱花地毯','🟪',0,42,80],['desk','复古书桌','🪑',0,70,26],
- ['clock','草莓闹钟','⏰',8,12,10],['mirror','蝴蝶结镜子','🪞',14,79,15],['vase','郁金香花瓶','🌷',8,20,18],
- ['bear','小熊玩偶','🧸',12,30,70],['cake','草莓蛋糕','🍰',10,52,65],['cherry','樱桃摆件','🍒',7,10,30],
- ['tea','下午茶杯','🍵',8,56,43],['basket','藤编收纳篮','🧺',13,6,78],['flower','小雏菊','🌼',6,15,46],
- ['bow','蝴蝶结装饰','🎀',9,29,15],['pillow','粉色靠枕','🩷',9,61,80],['piano','迷你钢琴','🎹',30,65,36],
- ['headphones','音乐耳机','🎧',12,82,40],['camera','拍立得相机','📷',18,25,38],['painting','樱花挂画','🖼️',14,42,8],
- ['candle','香薰蜡烛','🕯️',10,35,30],['cookie','饼干盒','🍪',7,55,13],['strawberry','草莓盆栽','🍓',12,15,53],
- ['cattoy','小猫玩偶','🐈',15,75,73],['ducktoy','鸭鸭玩偶','🦆',15,35,81],['stars','星星挂饰','⭐',9,58,11],
- ['bookshelf2','复古书柜','📖',22,82,54],['stool','圆圆坐垫','🪑',12,43,68],['computer','学习电脑','💻',28,72,46],
- ['sunflower','向日葵','🌻',12,89,65],['shelf','墙面置物架','🗃️',18,48,19],['radio2','复古收音机','📻',15,40,44],
- ['plant2','常春藤','🌿',11,88,13],['umbrella','樱花雨伞','🌂',9,4,54],['basket2','草莓礼物篮','🎁',16,46,83],
- ['frame','照片相框','🏞️',13,30,10],['light','樱花夜灯','🏮',14,83,28]
-];
-extras.forEach(([id,name,emoji,cost,x,y])=>{if(!furnitureItems.some(f=>f.id===id))furnitureItems.push({id,name,emoji,cost,x:x+'%',y:y+'%'})});
-if(!state.v8Starter){state.owned=[...new Set([...(state.owned||[]),'bed','lamp','plant','books','sofa','rug','desk'])];state.v8Starter=true;save()}
-const oldRenderRoom=renderRoom;
-renderRoom=function(){oldRenderRoom();
- $('furniture').querySelectorAll('button').forEach(b=>{
-  const id=b.getAttribute('aria-label')?.replace(/^选择/,'');const f=furnitureItems.find(item=>item.name===id);
-  if(!f)return;
-  b.addEventListener('pointerdown',ev=>{
-   if(ev.pointerType==='mouse'&&ev.button!==0)return;
-   const rect=$('gameRoom').getBoundingClientRect();const sx=ev.clientX,sy=ev.clientY;
-   let moved=false;b.setPointerCapture(ev.pointerId);
-   function move(e){
-    if(Math.hypot(e.clientX-sx,e.clientY-sy)<6&&!moved)return;
-    moved=true;b.classList.add('dragging');
-    const x=Math.max(1,Math.min(88,Math.round(((e.clientX-rect.left-20)/rect.width*100)/4)*4));
-    const y=Math.max(7,Math.min(84,Math.round(((e.clientY-rect.top-20)/rect.height*100)/4)*4));
-    b.style.left=x+'%';b.style.top=y+'%';
-   }
-   function end(){b.removeEventListener('pointermove',move);b.removeEventListener('pointerup',end);b.removeEventListener('pointercancel',end);
-    if(moved){selectedFurnitureId=f.id;state.positions[f.id]={x:parseFloat(b.style.left),y:parseFloat(b.style.top)};save();renderRoom();}
-   }
-   b.addEventListener('pointermove',move);b.addEventListener('pointerup',end);b.addEventListener('pointercancel',end);
-  });
- });
-};
 // Situational kaomoji, intentionally low-frequency.
 const faces={morning:['(｡•̀ᴗ-)✧ 좋은 아침!','(˶ᵔ ᵕ ᵔ˶) 早安呀 ♡'],night:['(｡-ω-)zzz 잘 자요~','(っ˘ω˘ς ) 要早点休息呀'],touch:['(˶ˆᗜˆ˵) ♡','(๑•̀ㅂ•́)و✧','(ฅ´ω`ฅ) 喵～','( ˘ ³˘)♥'],study:['٩(ˊᗜˋ*)و 잘했어!','(๑˃ᴗ˂)ﻭ 好棒！'],room:['(ﾉ´ヮ`)ﾉ*:･ﾟ✧','(｡•̀ᴗ-)✧ 今天也加油！']};
 let lastBubble=0;
